@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  api:
+    build: .
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./app:/app
+    environment:
+      - TZ=UTC-03:00 #idk why but -3 in docker == +3 in real life O_O
